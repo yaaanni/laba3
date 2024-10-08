@@ -18,23 +18,7 @@ double taskcos(double x){
     return sc;
 }
 
-/*int menu2()
-{
-    int variant2;
-    std::cout << "Хотите повторно запустить программу?" << std::endl;
-    std::cout << "1. Да\n"
-         << "2. Нет\n"<< std::endl;
-    std::cout << ">>> ";
-    std::cin >> variant2;
-    while (std::cin.fail()){
-  std::cin.clear();
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  std::cout << "Введите значение повторно:";
-  std::cin >> variant2;
-}
-    return variant2;
-}
-*/
+
 
 int menu()
 {
@@ -57,7 +41,6 @@ int menu()
 }
 
 int main(int argc, char* argv[]){
-
 
 
 bool trr = true;
@@ -107,23 +90,7 @@ while (trr) {
 
         case 5:
             trr = false;
-            /*if (trr = false) {
-                trr = false;
-                std::cout << "Выход совершен успешно" << std::endl << " " << std::endl;
-                
-                int variant2 = menu2();
-                switch(variant2) {
-                    case 1: 
-                    variant2 = menu2();
-                    break;
-
-                    case 2:
-                    std::cout << "Хотите запустить программу?";
-                    break;
-                }
-            return variant2 = menu2();
-                
-            }*/
+           
            std::cout << "Выход совершен успешно" << std::endl << " " << std::endl; 
             break;   
             
