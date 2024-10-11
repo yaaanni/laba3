@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cmath>
 
-int rad(){
+double program(){
     int n=1;
     double e=0.001, dn, s=0, dn1;
     
@@ -11,67 +11,51 @@ int rad(){
        s+=dn;
        n++;
     } while (fabs(dn-dn1)>e);
-
-    std::cout<< "s="<< s<< std::endl;
     
     return s;
 }  
-int menu()
-{
-    char variant;
-    std::cout << "Выберите вариант\n" << std::endl;
-    std::cout << "1. Кто выполнил задание\n"
-         << "2. Суть задания\n"
-         << "3. Результат программы\n"
-         << "4. Перезапуск\n"
-         << "5. Выход\n" << std::endl;
-    std::cout << ">>> ";
-    std::cin >> variant;
-    while (std::cin.fail()){
-  std::cin.clear();
-  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-  std::cout << "Введите значение повторно:";
-  std::cin >> variant;
+
+int menu() {
+    std::cout << "Выберите интересующий пункт меню: \n";
+    std::cout << "1. Кто выполнил задание\n";
+    std::cout << "2. Результат программы\n";
+    std::cout << "3. Суть задания\n";
+    std::cout << "4. Выход из программы\n";
+    std::cout << ">>>\n";
+
+    int n;
+    while (!(std::cin>> n) || (std::cin.peek() != '\n')) {
+        std::cin.clear();
+        while (std::cin.get() != '\n') {
+        }
+        return 0;
+    }
+    return n;
 }
-    return variant;
-}
 
-int main(int argc, char* argv[]){
+int main() {
+    while (true) {
+        int number = menu();
 
-bool trr = true;
-char variant = menu();
-
-while (trr) {
-    switch (variant) {
-        case '1':
-            std::cout << "Попова Яна" << std::endl;
-            variant = menu();
-            break;
-        case '2':
-            std::cout << "Найти сумму ряда с точностью 0.001, общий член которого dn = 1/2^n + 1/3^n" << std::endl;
-            variant = menu();
-            break;
-            
-        case '3':
-            rad();
-            variant = menu();
-            break;
-            
-        case '4':
-            std::cout << "Перезапуск" << std::endl << " " << std::endl;
-            variant = menu();
-            break;
-
-        case '5':
-            trr = false;
-            std::cout << "Выход совершен успешно" << std::endl << " " << std::endl; 
-            break;   
-            
-        default:
-            std::cerr << "Вы выбрали неверный вариант" << std::endl << " " << std::endl;;
-            variant = menu();
-    }}
-
-
-return 0;
+        if (number == 1) {
+            std::cout << "Попова Яна\n";     
+            }
+            else if (number == 2) {
+            double result = program();
+            std::cout << "Результат программы: " << result << "\n"; 
+            }
+            else if (number == 3) {
+                std::cout << "Найти сумму ряда\n";
+            }
+            else if (number == 4) {
+                std::cout << "Выход выполнен успешно!\n";
+                return 0;
+            }
+            else  
+            {
+                std::cout << "Неверно ввели значение, попробуйте еще раз: \n";
+                continue;
+            }
+            std::cout << ">>>\n";
+    }
 }

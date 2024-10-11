@@ -1,28 +1,44 @@
 #include <iostream>
 #include <cmath>
 
-int  program(){
-    double max;
-    int sum = 0, count = 0,temp;
-    std::cout << "Введите число: " << std::endl;
-    std::cin>>max;
-for (int i = 1; i < max; i++)
-{
-    temp = i;
-    while(temp != 0) {
-        temp = temp / 10; ++count;
-    }
-    temp = i;
-    while(temp)
-    {
-        sum+= pow(temp % 10, count);
-        temp = temp / 10;
-    }
-    if(sum == i) std::cout << i << std::endl;  
-sum = 0; count = 0;
+int program() {
+    int koef = 1;
+    int s1;
+    int an;
+    std::cout << "Введите а0: \n";
+    std::cin >> an;
+    while (std::cin.fail()){
+  std::cin.clear();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cout << "Введите значение повторно:";
+  std::cin >> an;
 }
-int i;
-return i;
+    std::cout << "Введите n: \n";
+    int n;
+    std::cin >> n;
+    while (std::cin.fail()){
+  std::cin.clear();
+  std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+  std::cout << "Введите значение повторно:";
+  std::cin >> n;
+}
+
+   for (int i=0;i<n;i++) {
+    koef = koef*(-2);
+    std::cout << koef << std::endl;
+   }
+    s1 = ((an*koef)+2)/6;
+
+    if (((an*koef)+2)%6 == 0) {
+    return s1;
+    } 
+    else 
+    {
+    std::cout << "Переполнение, попробуйте еще раз\n";
+    program();
+    return 0;
+}
+
 }
 
 int menu() {
@@ -52,9 +68,10 @@ int main() {
             }
             else if (number == 2) {
             double result = program();
+            std::cout << "Результат программы: " << result << "\n"; 
             }
             else if (number == 3) {
-                std::cout << "Найти числа Армстронга\n";
+                std::cout << "Найти сумму\n";
             }
             else if (number == 4) {
                 std::cout << "Выход выполнен успешно!\n";
