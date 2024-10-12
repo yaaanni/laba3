@@ -4,10 +4,6 @@
 using namespace std;
 // Функция для вычисления натурального логарифма
 double natural_log(double x1) {
-    if (x1 <= 0) {
-        std::cerr << "Ошибка: натуральный логарифм определен только для положительных чисел." << std::endl;
-        return std::numeric_limits<double>::quiet_NaN();
-    }
 
     // Приведение x к значению в диапазоне (0, 2]
     int k = 0;
