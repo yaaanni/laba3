@@ -76,7 +76,6 @@ int minValue = 0.1;
         m = m +2;
         i++;
     }
-    std::cout << sum;
     return 0;
 }
 
