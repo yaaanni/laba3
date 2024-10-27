@@ -58,6 +58,7 @@ int program()
     std::cout << "Введите значение повторно:";
     std::cin >> x;
 }
+    x1 = x;
     int k = 0;
     //Приведение угла от -360 до 360
     while (x > 360) {
@@ -69,7 +70,6 @@ int program()
         k--;
     }
 
-    x1 = x;
     int x2 = x;
     if (x >= 360){
         double xl = x;
