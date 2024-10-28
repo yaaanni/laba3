@@ -7,7 +7,7 @@ int program() {
     std::string input;
     int koef = 1;
     int s1;
-    int an;
+    long long an;
     std::cout << "Введите а0: \n";
     std::cin >> an;
     while (true) {
@@ -31,7 +31,7 @@ int program() {
             }
     }
     std::cout << "Введите n: \n";
-    int n;
+    long long n;
     std::cin >> n;
     while (true) {
         if (n) { 
